@@ -1,16 +1,49 @@
-var playerName = window.prompt("What is your robots name?");
+var playerName = window.prompt("What is your robot's name?");
+var playerHealth = 100;
+var playerAttack = 10;
 
-console.log(playerName);
+// You can also log multiple values at once like this
+console.log(playerName, playerAttack, playerHealth);
 
-console.log("This logs a string, good for leaving yourself a messege");
-// this will do math and log 20
+var enemyName = "Roborto";
+var enemyHealth = 50;
+var enemyAttack = 12;
 
-console.log(10 + 10);
+var fight = function() {
+  window.alert("Welcome to Robot Gladiators!");
 
-console.log("Our robot's name is " + playerName);
+// subtract value of playerAttack from enemnyHealth and use that result to update the value in enemyHealth
+enemyHealth = enemyHealth - playerAttack;
+// log resulting messege to console for confirmation
 
-function fight() {
-window.alert("The fight has begun!");
+console.log(
+playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+);
+
+if (enemyHealth <= 0) {
+    window.alert(enemyName + " has died!");
 }
 
-// fight();
+else {
+    window.alert(enemyName + " still has " + enemyHealth + " health left.");
+}
+
+// Subtract the value of `enemyAttack` from the value of `playerHealth` and use that result to update the value in the `playerHealth` variable
+playerHealth = playerHealth - enemyAttack;
+
+// Log a resulting message to the console so we know that it worked.
+console.log(
+  enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+);
+
+if (playerHealth <= 0) {
+    window.alert(playerName + " has died!");
+}
+
+else {
+window.alert(playerName + " still has " + playerHealth + " health left.");
+}
+
+};
+
+fight();
